@@ -99,7 +99,10 @@ export const sortCompanies = async (req, res) => {
             companies = await Company.find().sort({ foundedOn: 1 });
         } else if (sortBy === 'city') {
             companies = await Company.find().sort({ city: 1 });
-        } else {
+        }       else if (sortBy === 'rating') {
+            companies = await Company.find().sort({ rating: 1 });
+        }
+         else {
             companies = await Company.find();
         }
 
